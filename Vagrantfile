@@ -4,8 +4,8 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ebrc/centos-7-64-puppet"
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
-    v.cpus = 2
+    v.memory = 8192
+    v.cpus = 4
     v.customize ["modifyvm", :id, "--ioapic", "on"]
   end
 
@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
     config.landrush.enabled = true
     config.landrush.tld = 'pup.apidb.org'
   end
- 
+
   config.vm.hostname = 'pup.apidb.org'
 
   config.vm.provision "shell", path: "addswap.sh"
