@@ -14,10 +14,10 @@ Vagrant.configure(2) do |config|
   config.vm.network :private_network, type: 'dhcp'
   if Vagrant.has_plugin?('landrush')
     config.landrush.enabled = true
-    config.landrush.tld = 'pup.apidb.org'
+    config.landrush.tld = 'pup2.apidb.org'
   end
 
-  config.vm.hostname = 'pup.apidb.org'
+  config.vm.hostname = 'pup2.apidb.org'
 
   config.vm.provision "shell", path: "addswap.sh"
 
